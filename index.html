@@ -2,36 +2,136 @@
 <html>
 <head>
     <title>Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f6fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-card {
+            width: min(90%, 420px);
+            padding: 28px;
+            background: #ffffff;
+            border: 1px solid #dce3eb;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(31, 49, 71, 0.1);
+        }
+
+        h2 {
+            margin: 0 0 22px;
+            color: #20364d;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #31465a;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #c8d2dd;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .gender-options {
+            margin-bottom: 15px;
+        }
+
+        .gender-options label,
+        .terms label {
+            display: inline;
+            margin-right: 14px;
+            font-weight: normal;
+        }
+
+        .terms {
+            margin: 4px 0 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 11px;
+            border: 0;
+            border-radius: 5px;
+            background: #2d6cdf;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background: #245bc0;
+        }
+    </style>
 </head>
 <body>
 
-    <h2>Registration Form</h2>
+    <main class="form-card">
+        <h2>Registration Form</h2>
 
-    <form>
-        <label>Name:</label><br>
-        <input type="text"><br><br>
+        <form>
+            <div class="field">
+                <label for="name">Name:</label>
+                <input id="name" type="text" required>
+            </div>
 
-        <label>Email:</label><br>
-        <input type="email"><br><br>
+            <div class="field">
+                <label for="email">Email:</label>
+                <input id="email" type="email" required>
+            </div>
 
-        <label>Password:</label><br>
-        <input type="password"><br><br>
+            <div class="field">
+                <label for="password">Password:</label>
+                <input id="password" type="password" required>
+            </div>
 
-        <label>Gender:</label><br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female<br><br>
+            <div class="field">
+                <label for="dob">Date of Birth:</label>
+                <input id="dob" name="dob" type="date" required>
+            </div>
 
-        <label>Department:</label><br>
-        <select>
-            <option>CS</option>
-            <option>IT</option>
-            <option>ECE</option>
-        </select><br><br>
+            <div class="gender-options">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
 
-        <input type="checkbox"> I accept the terms and conditions<br><br>
+            <div class="field">
+                <label for="department">Department:</label>
+                <select id="department">
+                    <option>CS</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                </select>
+            </div>
 
-        <input type="submit" value="Register">
-    </form>
+            <div class="terms">
+                <label><input type="checkbox" required> I accept the terms and conditions</label>
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+    </main>
 
 </body>
 </html>
