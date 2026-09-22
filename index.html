@@ -2,164 +2,120 @@
 <html>
 <head>
     <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
-            margin: 0;
-            padding: 16px;
-            min-height: 100vh;
+        * {
             box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f3f6fa;
-            font-family: Arial, sans-serif;
         }
 
-        .form-card {
-            box-sizing: border-box;
-            width: min(100%, 460px);
-            padding: 28px;
-            background: #ffffff;
-            border: 1px solid #dce3eb;
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial;
+            background: #f1f3f6;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 25px;
+            background: rgb(245, 166, 166);
             border-radius: 10px;
-            box-shadow: 0 8px 24px rgba(31, 49, 71, 0.1);
         }
 
         h2 {
-            margin: 0 0 22px;
-            color: #20364d;
             text-align: center;
         }
 
         label {
             display: block;
-            margin-bottom: 6px;
-            color: #31465a;
-            font-weight: bold;
+            margin: 10px 0 5px;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="date"],
-        select {
-            box-sizing: border-box;
+        input, select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #c8d2dd;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 15px;
         }
 
-        .field {
-            margin-bottom: 15px;
+        .gender input,
+        .terms input {
+            width: auto;
         }
 
-        .gender-options {
-            margin-bottom: 15px;
-        }
-
-        .gender-options label,
-        .terms label {
+        .gender label {
             display: inline;
-            margin-right: 14px;
-            font-weight: normal;
+            margin-right: 10px;
         }
 
         .terms {
-            margin: 4px 0 20px;
+            margin: 15px 0;
+        }
+
+        .terms label {
+            display: inline;
         }
 
         input[type="submit"] {
-            width: 100%;
-            padding: 11px;
-            border: 0;
-            border-radius: 5px;
             background: #2d6cdf;
             color: white;
+            border: none;
             cursor: pointer;
-            font-size: 15px;
-            font-weight: bold;
         }
 
-        input[type="submit"]:hover {
-            background: #245bc0;
-        }
-
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
             body {
-                align-items: flex-start;
-                padding: 16px 10px;
+                padding: 10px;
             }
 
-            .form-card {
-                padding: 22px 18px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            .gender-options label {
-                margin-right: 8px;
-            }
-
-            .terms label {
-                line-height: 1.5;
+            .form {
+                margin: 10px auto;
+                padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <main class="form-card">
-        <h2>Registration Form</h2>
+<div class="form">
+    <h2>Registration Form</h2>
 
-        <form>
-            <div class="field">
-                <label for="name">Name:</label>
-                <input id="name" type="text" required>
-            </div>
+    <form>
+        <label>Name:</label>
+        <input type="text" required>
 
-            <div class="field">
-                <label for="email">Email:</label>
-                <input id="email" type="email" required>
-            </div>
+        <label>Email:</label>
+        <input type="email" required>
 
-            <div class="field">
-                <label for="password">Password:</label>
-                <input id="password" type="password" required>
-            </div>
+        <label>Password:</label>
+        <input type="password" required>
 
-            <div class="field">
-                <label for="dob">Date of Birth:</label>
-                <input id="dob" name="dob" type="date" required>
-            </div>
+        <label>Date of Birth:</label>
+        <input type="date" required>
 
-            <div class="gender-options">
-                <label>Gender:</label>
-                <label><input type="radio" name="gender" value="male"> Male</label>
-                <label><input type="radio" name="gender" value="female"> Female</label>
-            </div>
+        <div class="gender">
+            <label>Gender:</label>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
 
-            <div class="field">
-                <label for="department">Department:</label>
-                <select id="department">
-                    <option>CS</option>
-                    <option>IT</option>
-                    <option>ECE</option>
-                    <option>CE</option>
-                    <option>EE</option>
-                </select>
-            </div>
+        <label>Department:</label>
+        <select>
+            <option>CS</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>CE</option>
+        </select>
 
-            <div class="terms">
-                <label><input type="checkbox" required> I accept the terms and conditions</label>
-            </div>
+        <div class="terms">
+            <input type="checkbox" required>
+            I accept the terms and conditions
+        </div>
 
-            <input type="submit" value="Register">
-        </form>
-    </main>
-
-</body>
-</html>
+        <input type="submit" value="Register">
+    </form> 
