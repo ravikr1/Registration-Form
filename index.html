@@ -5,7 +5,9 @@
     <style>
         body {
             margin: 0;
+            padding: 16px;
             min-height: 100vh;
+            box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -14,7 +16,8 @@
         }
 
         .form-card {
-            width: min(90%, 420px);
+            box-sizing: border-box;
+            width: min(100%, 460px);
             padding: 28px;
             background: #ffffff;
             border: 1px solid #dce3eb;
@@ -82,6 +85,29 @@
         input[type="submit"]:hover {
             background: #245bc0;
         }
+
+        @media (max-width: 480px) {
+            body {
+                align-items: flex-start;
+                padding: 16px 10px;
+            }
+
+            .form-card {
+                padding: 22px 18px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .gender-options label {
+                margin-right: 8px;
+            }
+
+            .terms label {
+                line-height: 1.5;
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,6 +148,8 @@
                     <option>CS</option>
                     <option>IT</option>
                     <option>ECE</option>
+                    <option>CE</option>
+                    <option>EE</option>
                 </select>
             </div>
 
